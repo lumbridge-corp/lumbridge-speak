@@ -1,0 +1,13 @@
+# systemd user unit for the Lumbridge Speak front.
+#   install -Dm644 deploy/linux/lumbridge-speak.service ~/.config/systemd/user/lumbridge-speak.service
+#   systemctl --user daemon-reload && systemctl --user enable --now lumbridge-speak
+[Unit]
+Description=Lumbridge Speak (text to speech front)
+After=network.target
+
+[Service]
+ExecStart=%h/.local/bin/lumbridge-speak serve
+Restart=on-failure
+
+[Install]
+WantedBy=default.target

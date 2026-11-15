@@ -1,0 +1,33 @@
+[package]
+name = "lumbridge-speak"
+description = "Lumbridge Speak: text to speech. The HTTP front (the model sits behind an adapter) and the speak command."
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.85"
+authors = ["Lumbridge Corp"]
+license = "Apache-2.0"
+repository = "https://github.com/lumbridge-corp/lumbridge-speak"
+homepage = "https://lumbridgecorp.com"
+readme = "README.md"
+publish = false
+
+[[bin]]
+name = "lumbridge-speak"
+path = "src/main.rs"
+
+[dependencies]
+axum = { version = "0.8", default-features = false, features = ["http1", "tokio", "json"] }
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "net", "process", "io-util", "time", "signal"] }
+reqwest = { version = "0.12", default-features = false, features = ["json"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = { version = "1", features = ["preserve_order"] }
+toml = "0.8"
+regex = "1"
+
+[dev-dependencies]
+tower = { version = "0.5", features = ["util"] }
+http-body-util = "0.1"
+
+[profile.release]
+strip = true
+lto = true

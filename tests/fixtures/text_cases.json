@@ -1,0 +1,347 @@
+[
+ {
+  "input": "Hello there.",
+  "instructions": null,
+  "clean": "Hello there.",
+  "text": "Hello there.",
+  "control": "",
+  "chunks": [
+   "Hello there."
+  ],
+  "error": null
+ },
+ {
+  "input": "  Hello   there.\n\nSecond   line!  ",
+  "instructions": null,
+  "clean": "Hello there. Second line!",
+  "text": "Hello there. Second line!",
+  "control": "",
+  "chunks": [
+   "Hello there. Second line!"
+  ],
+  "error": null
+ },
+ {
+  "input": "Read the [docs](https://example.com/a(b)) and the **bold** `code` _part_.",
+  "instructions": null,
+  "clean": "Read the docs) and the bold code part .",
+  "text": "Read the docs) and the bold code part .",
+  "control": "",
+  "chunks": [
+   "Read the docs) and the bold code part ."
+  ],
+  "error": null
+ },
+ {
+  "input": "Before ```python\nprint('x')\n``` after. And ```two``` blocks ```three\n``` done.",
+  "instructions": null,
+  "clean": "Before after. And blocks done.",
+  "text": "Before after. And blocks done.",
+  "control": "",
+  "chunks": [
+   "Before after. And blocks done."
+  ],
+  "error": null
+ },
+ {
+  "input": "# Title\n> quote | table ~~strike~~",
+  "instructions": null,
+  "clean": "Title quote table strike",
+  "text": "Title quote table strike",
+  "control": "",
+  "chunks": [
+   "Title quote table strike"
+  ],
+  "error": null
+ },
+ {
+  "input": "(softly) Good morning, Sam.",
+  "instructions": null,
+  "clean": "(softly) Good morning, Sam.",
+  "text": "Good morning, Sam.",
+  "control": "softly",
+  "chunks": [
+   "Good morning, Sam."
+  ],
+  "error": null
+ },
+ {
+  "input": "(softly)Good morning.",
+  "instructions": null,
+  "clean": "(softly)Good morning.",
+  "text": "Good morning.",
+  "control": "softly",
+  "chunks": [
+   "Good morning."
+  ],
+  "error": null
+ },
+ {
+  "input": "( calm and slow )   Good evening.",
+  "instructions": "  cheerful   and  bright ",
+  "clean": "( calm and slow ) Good evening.",
+  "text": "Good evening.",
+  "control": "cheerful and bright",
+  "chunks": [
+   "Good evening."
+  ],
+  "error": null
+ },
+ {
+  "input": "Good evening.",
+  "instructions": "cheerful",
+  "clean": "Good evening.",
+  "text": "Good evening.",
+  "control": "cheerful",
+  "chunks": [
+   "Good evening."
+  ],
+  "error": null
+ },
+ {
+  "input": "Good evening.",
+  "instructions": "has (brackets) inside",
+  "clean": "Good evening.",
+  "text": null,
+  "control": null,
+  "chunks": null,
+  "error": "instructions must be at most 300 chars without parentheses"
+ },
+ {
+  "input": "Good evening.",
+  "instructions": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "clean": "Good evening.",
+  "text": null,
+  "control": null,
+  "chunks": null,
+  "error": "instructions must be at most 300 chars without parentheses"
+ },
+ {
+  "input": "Good evening.",
+  "instructions": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "clean": "Good evening.",
+  "text": "Good evening.",
+  "control": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "chunks": [
+   "Good evening."
+  ],
+  "error": null
+ },
+ {
+  "input": "(yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy) Good evening.",
+  "instructions": null,
+  "clean": "(yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy) Good evening.",
+  "text": "Good evening.",
+  "control": "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy",
+  "chunks": [
+   "Good evening."
+  ],
+  "error": null
+ },
+ {
+  "input": "(yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy) Good evening.",
+  "instructions": null,
+  "clean": "(yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy) Good evening.",
+  "text": "(yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy) Good evening.",
+  "control": "",
+  "chunks": [
+   "(yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy",
+   "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy) Good evening."
+  ],
+  "error": null
+ },
+ {
+  "input": "(not a cue",
+  "instructions": null,
+  "clean": "(not a cue",
+  "text": "(not a cue",
+  "control": "",
+  "chunks": [
+   "(not a cue"
+  ],
+  "error": null
+ },
+ {
+  "input": "(a cue) (and) more (brackets).",
+  "instructions": null,
+  "clean": "(a cue) (and) more (brackets).",
+  "text": "(and) more (brackets).",
+  "control": "a cue",
+  "chunks": [
+   "(and) more (brackets)."
+  ],
+  "error": null
+ },
+ {
+  "input": "One. Two! Three? Four.",
+  "instructions": null,
+  "clean": "One. Two! Three? Four.",
+  "text": "One. Two! Three? Four.",
+  "control": "",
+  "chunks": [
+   "One. Two! Three? Four."
+  ],
+  "error": null
+ },
+ {
+  "input": "No sentence end at all No sentence end at all No sentence end at all No sentence end at all No sentence end at all No sentence end at all No sentence end at all No sentence end at all No sentence end at all No sentence end at all No sentence end at all No sentence end at all No sentence end at all No sentence end at all No sentence end at all No sentence end at all No sentence end at all No sentence end at all No sentence end at all No sentence end at all ",
+  "instructions": null,
+  "clean": "No sentence end at all No sentence end at all No sentence end at all No sentence end at all No sentence end at all No sentence end at all No sentence end at all No sentence end at all No sentence end at all No sentence end at all No sentence end at all No sentence end at all No sentence end at all No sentence end at all No sentence end at all No sentence end at all No sentence end at all No sentence end at all No sentence end at all No sentence end at all",
+  "text": "No sentence end at all No sentence end at all No sentence end at all No sentence end at all No sentence end at all No sentence end at all No sentence end at all No sentence end at all No sentence end at all No sentence end at all No sentence end at all No sentence end at all No sentence end at all No sentence end at all No sentence end at all No sentence end at all No sentence end at all No sentence end at all No sentence end at all No sentence end at all",
+  "control": "",
+  "chunks": [
+   "No sentence end at all No sentence end at all No sentence end at all No sentence end at all No sentence end at all No sentence end at all No sentence end at all No sentence end at",
+   "all No sentence end at all No sentence end at all No sentence end at all No sentence end at all No sentence end at all No sentence end at all No sentence end at all No sentence",
+   "end at all No sentence end at all No sentence end at all No sentence end at all No sentence end at all"
+  ],
+  "error": null
+ },
+ {
+  "input": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "instructions": null,
+  "clean": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "text": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "control": "",
+  "chunks": [
+   "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+   "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+   "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  ],
+  "error": null
+ },
+ {
+  "input": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "instructions": null,
+  "clean": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "text": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "control": "",
+  "chunks": [
+   "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  ],
+  "error": null
+ },
+ {
+  "input": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "instructions": null,
+  "clean": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "text": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "control": "",
+  "chunks": [
+   "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+   "x"
+  ],
+  "error": null
+ },
+ {
+  "input": "Lumbridge keeps every model on one box. Lumbridge keeps every model on one box. Lumbridge keeps every model on one box. Lumbridge keeps every model on one box. Lumbridge keeps every model on one box. Lumbridge keeps every model on one box. Lumbridge keeps every model on one box. Lumbridge keeps every model on one box. Lumbridge keeps every model on one box. Lumbridge keeps every model on one box. Lumbridge keeps every model on one box. Lumbridge keeps every model on one box.",
+  "instructions": null,
+  "clean": "Lumbridge keeps every model on one box. Lumbridge keeps every model on one box. Lumbridge keeps every model on one box. Lumbridge keeps every model on one box. Lumbridge keeps every model on one box. Lumbridge keeps every model on one box. Lumbridge keeps every model on one box. Lumbridge keeps every model on one box. Lumbridge keeps every model on one box. Lumbridge keeps every model on one box. Lumbridge keeps every model on one box. Lumbridge keeps every model on one box.",
+  "text": "Lumbridge keeps every model on one box. Lumbridge keeps every model on one box. Lumbridge keeps every model on one box. Lumbridge keeps every model on one box. Lumbridge keeps every model on one box. Lumbridge keeps every model on one box. Lumbridge keeps every model on one box. Lumbridge keeps every model on one box. Lumbridge keeps every model on one box. Lumbridge keeps every model on one box. Lumbridge keeps every model on one box. Lumbridge keeps every model on one box.",
+  "control": "",
+  "chunks": [
+   "Lumbridge keeps every model on one box. Lumbridge keeps every model on one box. Lumbridge keeps every model on one box. Lumbridge keeps every model on one box.",
+   "Lumbridge keeps every model on one box. Lumbridge keeps every model on one box. Lumbridge keeps every model on one box. Lumbridge keeps every model on one box.",
+   "Lumbridge keeps every model on one box. Lumbridge keeps every model on one box. Lumbridge keeps every model on one box. Lumbridge keeps every model on one box."
+  ],
+  "error": null
+ },
+ {
+  "input": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA. BBBBBBBBBBBBBBBBBBBB. C.",
+  "instructions": null,
+  "clean": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA. BBBBBBBBBBBBBBBBBBBB. C.",
+  "text": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA. BBBBBBBBBBBBBBBBBBBB. C.",
+  "control": "",
+  "chunks": [
+   "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA.",
+   "BBBBBBBBBBBBBBBBBBBB. C."
+  ],
+  "error": null
+ },
+ {
+  "input": "Dr. Smith paid $3.50 at 10:30 a.m. for PR #73. Really?! Yes... fine.",
+  "instructions": null,
+  "clean": "Dr. Smith paid $3.50 at 10:30 a.m. for PR 73. Really?! Yes... fine.",
+  "text": "Dr. Smith paid $3.50 at 10:30 a.m. for PR 73. Really?! Yes... fine.",
+  "control": "",
+  "chunks": [
+   "Dr. Smith paid $3.50 at 10:30 a.m. for PR 73. Really?! Yes... fine."
+  ],
+  "error": null
+ },
+ {
+  "input": "Caf\u00e9 na\u00efve \u2014 d\u00e9j\u00e0 vu. \u65e5\u672c\u8a9e\u306e\u6587\u3002 Next.",
+  "instructions": null,
+  "clean": "Caf\u00e9 na\u00efve \u2014 d\u00e9j\u00e0 vu. \u65e5\u672c\u8a9e\u306e\u6587\u3002 Next.",
+  "text": "Caf\u00e9 na\u00efve \u2014 d\u00e9j\u00e0 vu. \u65e5\u672c\u8a9e\u306e\u6587\u3002 Next.",
+  "control": "",
+  "chunks": [
+   "Caf\u00e9 na\u00efve \u2014 d\u00e9j\u00e0 vu. \u65e5\u672c\u8a9e\u306e\u6587\u3002 Next."
+  ],
+  "error": null
+ },
+ {
+  "input": "\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9 tail",
+  "instructions": null,
+  "clean": "\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9 tail",
+  "text": "\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9 tail",
+  "control": "",
+  "chunks": [
+   "\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9",
+   "\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9 tail"
+  ],
+  "error": null
+ },
+ {
+  "input": "Ends with markup **",
+  "instructions": null,
+  "clean": "Ends with markup",
+  "text": "Ends with markup",
+  "control": "",
+  "chunks": [
+   "Ends with markup"
+  ],
+  "error": null
+ },
+ {
+  "input": "***",
+  "instructions": null,
+  "clean": "",
+  "text": "",
+  "control": "",
+  "chunks": [],
+  "error": null
+ },
+ {
+  "input": "",
+  "instructions": null,
+  "clean": "",
+  "text": "",
+  "control": "",
+  "chunks": [],
+  "error": null
+ },
+ {
+  "input": "Tabs\tand\r\nnewlines.\tNext one.",
+  "instructions": null,
+  "clean": "Tabs and newlines. Next one.",
+  "text": "Tabs and newlines. Next one.",
+  "control": "",
+  "chunks": [
+   "Tabs and newlines. Next one."
+  ],
+  "error": null
+ },
+ {
+  "input": "Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. ",
+  "instructions": null,
+  "clean": "Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short.",
+  "text": "Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short.",
+  "control": "",
+  "chunks": [
+   "Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short.",
+   "Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short. Short.",
+   "Short. Short. Short. Short. Short. Short. Short. Short. Short. Short."
+  ],
+  "error": null
+ }
+]

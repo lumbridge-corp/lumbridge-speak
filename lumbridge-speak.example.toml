@@ -1,0 +1,58 @@
+# Lumbridge Speak settings. Every line here shows the built-in default.
+# Use:  lumbridge-speak --config /path/to/this.toml   (or LUMBRIDGE_SPEAK_CONFIG)
+# Each setting can also be given in the environment, which wins over this file:
+#   LUMBRIDGE_SPEAK_LISTEN, _ADAPTER, _DEFAULT_VOICE, _REPORTED_DEFAULT_VOICE, _FFMPEG,
+#   _MAGPIE_URL, _MAGPIE_MODEL, _MAGPIE_RATE
+
+# Address and port the front listens on. Loopback only: the front has no authentication.
+listen = "127.0.0.1:8813"
+
+# magpie = NVIDIA Magpie TTS on NeMo-Speech.cpp. mock = no model, for trying the front.
+adapter = "magpie"
+
+# Used when the caller names no voice, or one the model does not have.
+default_voice = "Leo"
+
+# Reported as "default" by /health and the voice list. It selects nothing.
+reported_default_voice = "default"
+
+ffmpeg = "ffmpeg"
+
+# Write numbers, money, times, versions and paths as words before the model sees them
+# ("$0.19" -> "nineteen cents"). Magpie reads the written forms as noise. A request can
+# turn it off for itself with "normalize": false.
+normalize = true
+
+# Things that are never read aloud, as regular expressions. Example: ["\\bticket-[0-9a-f]+\\b"]
+drop = []
+
+# Loudness: scale each answer so its loudest sample sits at this level (0 to 1).
+# 0 leaves the model's own level, which is quiet (peak near 0.5). Try 0.9.
+level = 0.0
+
+[magpie]
+url = "http://127.0.0.1:8808"
+model = "magpietts"
+rate = 22050
+
+# How this installation's own names are said, written form = spoken form. Whole words,
+# in the letter case given. Example:  "PostgreSQL" = "post gress Q L"
+[say]
+
+# The `speak` command.
+[client]
+# The front to ask for audio.
+front = "http://127.0.0.1:8813"
+# Voice to ask for. Empty = the front's default.
+voice = ""
+# Playback speed, 0.5 to 2.
+rate = 1.0
+# Speech-to-text servers (/v1/audio/transcriptions) for `speak check`, commas between.
+# With several, a sentence counts as its best listener heard it. Empty = none.
+asr = ""
+
+# Other machines that speak for us: `speak --on NAME text`. Each has an announce
+# endpoint (POST <url>/say with a bearer token), as Lumbridge Voice for Mac does.
+# [client.targets.laptop]
+# url = "http://laptop:8796"
+# token_file = "~/.config/lumbridge-speak/laptop.token"

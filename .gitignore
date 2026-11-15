@@ -1,0 +1,31 @@
+# Rust
+/target
+**/*.rs.bk
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Never in the repo: audio (voice reference clips included), model weights, secrets.
+*.wav
+*.mp3
+*.flac
+*.ogg
+*.opus
+*.pcm
+*.gguf
+*.safetensors
+models/
+voices/
+*.token
+.env
+.env.*
+
+# Hand-made safety copies; git keeps the history.
+*.bak
+*.bak-*
+*.bak.*
+*.log
+.DS_Store
