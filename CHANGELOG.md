@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## 0.1.1 - 2026-11-17
+
+- README: a header image, in `docs/assets/`. No code changes.
+
 ## 0.1.0 - 2026-11-13
 
 First open-source release.

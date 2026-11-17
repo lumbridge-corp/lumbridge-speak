@@ -1,3 +1,5 @@
+![Lumbridge Speak: Text to speech you host yourself.](docs/assets/banner.jpg)
+
 # Lumbridge Speak
 
 Text to speech: one small Rust program that is both an OpenAI-style `/v1/audio/speech`
